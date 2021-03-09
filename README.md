@@ -1,5 +1,7 @@
 # vim-poke
 
+NOTE: This is a work in progress
+
 vim syntax highlight for GNU Poke.
 
 Install by placing the poke.vim in your ~/.vim/syntax folder and placing the following in your .vimrc:
