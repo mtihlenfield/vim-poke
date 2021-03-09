@@ -77,22 +77,16 @@ syn keyword pokeBuiltinFunction crc32
 syn keyword pokeBuiltinFunction alignto
 syn keyword pokeBuiltinFunction open, close, flush, get_ios, set_ios, iosize
 
-" Return types:
-" TODO how to tell vim a type ending with : is a return type?
-
 " Formats
 
 " Special chars
-syn match pokeSpecial "\\\([nt]\|\o\{1,3}\)" display contained
+syn match pokeSpecial "\\\([nt\\]\|\o\{1,3}\)" display contained
 
 " Chars
-" TODO this doesn't work for some reason
-syn match pokeChar "L\='[^\\]'"
-syn match pokeChar "L'[^']*'" contains=pokeSpecial
+syn match pokeChar "'[^']*'" contains=pokeSpecial
 
 " Strings
 syn region pokeString skip=+\\\\\|\\"+ start=+"+ end=+"+ contains=pokeSpecial
-
 
 " Integer literals
 " TODO handle digit separator
@@ -102,8 +96,12 @@ syn region pokeString skip=+\\\\\|\\"+ start=+"+ end=+"+ contains=pokeSpecial
 " TODO to handle these somehow so that 'offset doesn't display as a keyword
 
 " Units
+syn keyword pokeBuiltinUnit b M B
+syn keyword pokeBuiltinUnit Kb KB Mb MB Gb GB
+syn keyword pokeBuiltinUnit Kib KiB Mib MiB Gib GiB
 
-" Escape
+" Offsets
+syn match pokeOffset "#.*" contains=pokeBuiltinUnit
 
 " Comments
 syn keyword pokeCommentTodo TODO FIXME XXX TBD contained
@@ -113,6 +111,7 @@ syn region pokeComment start="/\*"  end="\*/" contains=pokeCommentTodo,@Spell fo
 " Highlight groups
 hi def link pokeBuiltinFunction Function
 hi def link pokeBuiltinType Type
+hi def link pokeBuiltinUnit Keyword
 hi def link pokeChar Character
 hi def link pokeComment Comment
 hi def link pokeCommentTodo Todo
@@ -124,6 +123,7 @@ hi def link pokeExceptionType Structure
 hi def link pokeFunction Function
 hi def link pokeLineComment Comment
 hi def link pokeLoad Include
+hi def link pokeOffset StorageClass
 hi def link pokeOperator Operator
 hi def link pokeSpecial SpecialChar
 hi def link pokeStatement Statement
