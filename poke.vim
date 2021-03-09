@@ -1,7 +1,8 @@
 " Vim syntax file
 " Language: GNU Poke
 " Maintainer: Matt Ihlenfield
-" Latest Revision: 8 March 2021
+" Filenames: *.pk
+" Latest Revision: 9 March 2021
 
 if exists('b:current_syntax')
     finish
@@ -37,7 +38,6 @@ syn keyword pokeLoad load
 syn keyword pokeException try catch until raise
 
 " Exception types
-" TODO figure out why these aren't highlighted
 syn keyword pokeExceptionType Exception E_generic E_out_of_bounds
 syn keyword pokeExceptionType E_eof E_elem E_constraint
 syn keyword pokeExceptionType E_conv E_map_bounds E_map
