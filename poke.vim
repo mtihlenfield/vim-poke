@@ -89,8 +89,10 @@ syn match pokeChar "'[^']*'" contains=pokeSpecial
 syn region pokeString skip=+\\\\\|\\"+ start=+"+ end=+"+ contains=pokeSpecial
 
 " Integer literals
-" TODO handle digit separator
-" TODO handle integer types
+syn match pokeInteger "\<\d\+_*\d*\([LlHhBbNn]\=[Uu]\=\|[Uu]\=[LlHhBbNn]\=\)\>"
+syn match pokeInteger "\<0[Xx]\x\+_*\x*\([LlHhBbNn]\=[Uu]\=\|[Uu]\=[LlHhBbNn]\=\)\>"
+syn match pokeInteger "\<0[Oo]\o\+_*\o*\([LlHhBbNn]\=[Uu]\=\|[Uu]\=[LlHhBbNn]\=\)\>"
+syn match pokeInteger "\<0[Bb][01]\+_*[01]*\([LlHhBbNn]\=[Uu]\=\|[Uu]\=[LlHhBbNn]\=\)\>"
 
 " Attributes
 " TODO to handle these somehow so that 'offset doesn't display as a keyword
@@ -121,6 +123,7 @@ hi def link pokeException Exception
 hi def link pokeExceptionCode Constant
 hi def link pokeExceptionType Structure
 hi def link pokeFunction Function
+hi def link pokeInteger Number
 hi def link pokeLineComment Comment
 hi def link pokeLoad Include
 hi def link pokeOffset StorageClass
