@@ -66,14 +66,11 @@ syn keyword pokeConstant IOS_M_RDONLY IOS_M_WRONLY IOS_M_RDWR
 syn keyword pokeConstant load_path NULL OFFSET
 
 " Poke std lib
-syn keyword pokeBuiltinFunction print printf
-syn keyword pokeBuiltinFunction catos stoca atoi ltos
-syn keyword pokeBuiltinFunction reverse
-syn keyword pokeBuiltinFunction ltrim rtrim strchr
-syn keyword pokeBuiltinFunction qsort
-syn keyword pokeBuiltinFunction crc32
-syn keyword pokeBuiltinFunction alignto
+syn keyword pokeBuiltinFunction print printf catos stoca atoi ltos reverse
+syn keyword pokeBuiltinFunction ltrim rtrim strchr qsort crc32 alignto
 syn keyword pokeBuiltinFunction open close flush get_ios set_ios iosize
+syn keyword pokeBuiltinFunction rand get_endian set_endian strace exit
+syn keyword pokeBuiltinFunction getenv
 
 " Formats
 
