@@ -1,8 +1,23 @@
+" Copyright (C) 2021 Matthew T. Ihlenfield.
+"
+" This program is free software: you can redistribute it and/or modify
+" it under the terms of the GNU General Public License as published by
+" the Free Software Foundation, either version 3 of the License, or
+" (at your option) any later version.
+"
+" This program is distributed in the hope that it will be useful,
+" but WITHOUT ANY WARRANTY; without even the implied warranty of
+" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+" GNU General Public License for more details.
+"
+" You should have received a copy of the GNU General Public License
+" along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"
 " Vim syntax file
 " Language: Poke
 " Maintainer: Matt Ihlenfield <mtihlenfield@protonmail.com>
 " Filenames: *.pk
-" Latest Revision: 9 March 2021
+" Latest Revision: 10 March 2021
 
 if exists('b:current_syntax')
     finish
@@ -18,7 +33,7 @@ syn match pokeVar '\h\w*' display contained
 
 " User defined functions
 syn match pokeFunction '\h\w*' display contained
- 
+
 " Poke operators
 syn keyword pokeOperator in sizeof as isa unmap
 
@@ -30,10 +45,10 @@ syn keyword pokeStructure struct union pinned
 
 " Loops
 syn keyword pokeRepeat while for
- 
+
 " Imports
 syn keyword pokeLoad load
- 
+
 " Exceptions
 syn keyword pokeException try catch until raise
 
@@ -80,6 +95,9 @@ syn match pokeSpecial "\\\([nt\\]\|\o\{1,3}\)" display contained
 " Chars
 syn match pokeChar "'[^']*'" contains=pokeSpecial
 
+" Attributes
+syn match pokeAttribute "\h\w*'\h\w"
+
 " Strings
 syn region pokeString skip=+\\\\\|\\"+ start=+"+ end=+"+ contains=pokeSpecial
 
@@ -95,7 +113,7 @@ syn keyword pokeBuiltinUnit Kb KB Mb MB Gb GB
 syn keyword pokeBuiltinUnit Kib KiB Mib MiB Gib GiB
 
 " Offsets
-syn match pokeOffset "#.*" contains=pokeBuiltinUnit
+syn match pokeOffset "#\h\w*" contains=pokeBuiltinUnit
 
 " Comments
 syn keyword pokeCommentTodo TODO FIXME XXX TBD contained
