@@ -1,6 +1,6 @@
 # vim-poke
 
-vim syntax highlighting for GNU Poke.
+vim syntax highlighting for Poke.
 
 Install by placing `poke.vim` in your `~/.vim/syntax` folder and placing the following in your .vimrc:
 
