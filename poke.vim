@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language: GNU Poke
+" Language: Poke
 " Maintainer: Matt Ihlenfield <mtihlenfield@protonmail.com>
 " Filenames: *.pk
 " Latest Revision: 9 March 2021
