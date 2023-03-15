@@ -119,6 +119,7 @@ syn match pokeOffset "#\h\w*" contains=pokeBuiltinUnit
 syn keyword pokeCommentTodo TODO FIXME XXX TBD contained
 syn match pokeLineComment "\/\/.*" contains=pokeCommentTodo,@Spell extend
 syn region pokeComment start="/\*"  end="\*/" contains=pokeCommentTodo,@Spell fold extend
+syn region pokeComment start="#!"  end="!#" contains=pokeCommentTodo,@Spell fold extend
 
 " Allow folding of blocks
 syn region pokeBlock start="{" end="}" transparent fold
